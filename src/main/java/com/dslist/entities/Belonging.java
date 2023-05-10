@@ -7,29 +7,29 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_belongin")
-public class Belongin {
+@Table(name = "tb_belonging")
+public class Belonging {
 	
 	@EmbeddedId
-	private BelonginPK id = new BelonginPK();
+	private BelongingPK id = new BelongingPK();
 	
 	private Integer position;
 	
-	public Belongin() {
+	public Belonging() {
 		
 	}
 
-	public Belongin(Game game, GameList list, Integer position) {
+	public Belonging(Game game, GameList list, Integer position) {
 		id.setGame(game);
 		id.setList(list);
 		this.position = position;
 	}
 
-	public BelonginPK getId() {
+	public BelongingPK getId() {
 		return id;
 	}
 
-	public void setId(BelonginPK id) {
+	public void setId(BelongingPK id) {
 		this.id = id;
 	}
 
@@ -54,7 +54,7 @@ public class Belongin {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Belongin other = (Belongin) obj;
+		Belonging other = (Belonging) obj;
 		return Objects.equals(id, other.id);
 	}
 }
